@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "updated": "2026-11-21",
+  "about": "AITCO Fix malware indicators. Facts only - names, SHA-256 hashes and the start-up places a name counts in. No sample is kept anywhere. Raise 'version' at every change; PCs never take an older list.",
+  "indicators": [
+    {
+      "name": "EICAR-Test-File",
+      "kind": "test",
+      "sha256": ["275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f"],
+      "note": "The standard, harmless antivirus test file: the self-test of the check (Defender also quarantines it)."
+    },
+    {
+      "name": "XMRig miner",
+      "kind": "miner",
+      "files": ["xmrig.exe"],
+      "where": ["run", "runonce", "startup", "task", "service"],
+      "note": "XMRig is an open-source Monero miner; started by itself on a company PC it is almost always a planted miner."
+    }
+  ]
+}
